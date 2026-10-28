@@ -169,17 +169,19 @@ function TestSelectionPage({ tests, initialTestId, onStart, loadingTestId }) {
       const matchesCategory =
         category === 'All'
           ? true
-          : category === 'Fastrack'
-            ? test.name.toLowerCase().startsWith('fastrack')
-            : category === 'Regular'
-              ? test.name.toLowerCase().startsWith('regular')
-              : category === 'A2 Regular'
-                ? test.name.toLowerCase().startsWith('a2')
-                : category === 'Worksheets'
-                  ? (test.name.toLowerCase().startsWith('worksheet') || test.name.toLowerCase().startsWith('kapitel') || test.id.toLowerCase().startsWith('kapitel'))
-                  : category === 'Unit Tests'
-                    ? test.name.toLowerCase().startsWith('unit')
-                    : true;
+          : category === 'A1 Full Tests'
+            ? (test.name.toLowerCase().startsWith('a1 full test') || test.id.toLowerCase().startsWith('a1 full test'))
+            : category === 'Fastrack'
+              ? test.name.toLowerCase().startsWith('fastrack')
+              : category === 'Regular'
+                ? test.name.toLowerCase().startsWith('regular')
+                : category === 'A2 Regular'
+                  ? test.name.toLowerCase().startsWith('a2')
+                  : category === 'Worksheets'
+                    ? (test.name.toLowerCase().startsWith('worksheet') || test.name.toLowerCase().startsWith('kapitel') || test.id.toLowerCase().startsWith('kapitel'))
+                    : category === 'Unit Tests'
+                      ? test.name.toLowerCase().startsWith('unit')
+                      : true;
 
       const q = searchQuery.trim().toLowerCase();
       const matchesSearch = !q || test.name.toLowerCase().includes(q) || test.id.toLowerCase().includes(q);
@@ -239,7 +241,7 @@ function TestSelectionPage({ tests, initialTestId, onStart, loadingTestId }) {
           {/* Filtering and Controls Bar */}
           <div className="test-portal-controls">
             <div className="portal-categories">
-              {['All', 'Regular', 'Fastrack', 'Worksheets', 'Unit Tests', 'A2 Regular'].map((cat) => (
+              {['All', 'A1 Full Tests', 'Regular', 'Fastrack', 'Worksheets', 'Unit Tests', 'A2 Regular'].map((cat) => (
                 <button
                   type="button"
                   key={cat}
