@@ -451,7 +451,7 @@ function Home({ profile, selectedTest, moduleStatuses, onStart, onChangeStudent,
                       <Eye size={16} /> View Examination Report
                     </button>
                     <button className="secondary-button" onClick={() => downloadCompleteReport(profile, selectedTest)}>
-                      <Download size={16} /> Export HTML
+                      <Download size={16} /> Download Results
                     </button>
                   </>
                 ) : (
@@ -536,7 +536,7 @@ function InteractiveReportModal({ profile, selectedTest, onClose }) {
           </div>
           <div className="report-modal-header-actions">
             <button className="primary-button compact" onClick={() => downloadCompleteReport(profile, selectedTest)}>
-              <Download size={15} /> Export HTML
+              <Download size={15} /> Download Results
             </button>
             <button className="secondary-button compact" onClick={() => window.print()}>
               <Printer size={15} /> Print / PDF
